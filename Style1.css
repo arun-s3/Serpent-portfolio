@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:'Poppins', sans-serif;
+}
+:root{
+    --BG-COLOR:#2A3C48;
+    --PRIMARY-COLOR:#00abf0;
+    --SEC-COLOR:#ededed;
+    --COLOR1:#F97B22;
+    --MAROON1: #9C254D;
+}
+body{
+    background-color:var(--BG-COLOR);
+}
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 10%;
+  z-index:2;
+}
+header .logo{
+    position:relative;
+    font-size:25px;
+    font-weight:bolder;
+    word-spacing:2px;
+    color: var(--COLOR1);
+}
+header .menu a{
+    position:relative;
+    bottom:3px;
+    margin-left:20px;
+    font-weight:400;
+    text-decoration:none;
+    letter-spacing:2px;
+    color: var(--SEC-COLOR);
+    animation-name:shrinker;
+    animation-delay:1.3s;
+    animation-duration:2.5s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+    z-index:5; 
+}
+
+@keyframes shrinker{
+    100%{
+        background-color:transparent;
+        letter-spacing:1px;
+        bottom:0px;
+        
+    }
+}
+header .menu a::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:var(--BG-COLOR);
+    animation-name:shows;
+    animation-delay:1.3s;
+    animation-duration:2.5s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+}
+@keyframes shows{
+    100%{
+        background-color: transparent;
+    }
+}
+
+
+
+
+header .menu a:hover{
+    color:var(--PRIMARY-COLOR);
+    transform: perspective(10%) translateZ(10px);
+}
+header .menu a:first-child{
+    color: var(--PRIMARY-COLOR)!important;
+}
+
+header .logo::before{
+    content:'';
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:var(--BG-COLOR);
+    animation-name:type-right;
+    animation-delay:0.4s;
+    animation-duration:1s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+}
+
+
+.homeContent{
+    position:relative;
+    display:flex;
+    align-items:center;
+    height:100vh;
+    padding:0 10%;
+    background-image:url('Images/SnakeBlue2.svg');
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position-x: right 7%;
+    background-position-y: top 37px;
+}
+
+
+.contentContainer{
+    position:relative;
+    max-width:600px;
+    display:inline-block;
+    
+}
+.contentContainer h1{
+    position:relative;
+    font-size:50px;
+    font-weight:bolder;
+    word-spacing:3px;
+    color: var(--SEC-COLOR);
+    line-height:57px;
+}
+.contentContainer h1::before{
+    content:'';
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:var(--BG-COLOR);
+    animation-name:type-right;
+    animation-delay:1s;
+    animation-duration:1s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+}
+.contentContainer h1 span{
+    margin-left:25px;
+}
+.contentContainer h3{
+    position:relative;
+    font-size:25px;
+    color:var(--PRIMARY-COLOR);
+}
+.contentContainer h3::before{
+    content:'';
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:var(--BG-COLOR);
+    animation-name:type-right;
+    animation-delay:1.3s;
+    animation-duration:1s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+}
+.contentContainer p{
+    position:relative;
+    color:var(--SEC-COLOR);
+    margin:20px 0;
+    text-align:initial;
+}
+.contentContainer p::before{
+    content:'';
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:var(--BG-COLOR);
+    animation-name:type-right;
+    animation-delay:1.6s;
+    animation-duration:1s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+}
+.contentContainer p::after {
+    content: '';
+    position: absolute;
+    bottom: 39px;
+    left: -11px;
+    height: 56%;
+    width: 50%;
+    border-left: 0 solid var(--COLOR1);
+    transform:translateY(-29px);
+    animation-name:border-in;
+    animation-delay:1.8s;
+    animation-duration:2s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+    z-index:3;
+}
+.contentContainer p:hover::after{
+    height:0%;
+    transition-delay:0.1s;
+    transition-duration:1s;
+}
+@keyframes border-in{
+    100%{
+        border-left: 1.5px solid var(--COLOR1);
+        transform:translateY(0px);
+    }
+}
+
+
+.buttonContainer{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    max-width:60%;
+}
+.buttonContainer::before{
+    content:'';
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:var(--BG-COLOR);
+    animation-name:type-right;
+    animation-delay:2.1s;
+    animation-duration:1s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+    z-index:2;
+}
+.buttonContainer a{
+    display:inline-flex;
+    position:relative;
+    justify-content:center;
+    align-items:center;
+    color:var(--BG-COLOR);
+    background-color:var(--PRIMARY-COLOR);
+    font-size:18px;
+    font-weight:400;
+    word-spacing:2px;
+    border:3px solid var(--PRIMARY-COLOR);
+    border-radius:10px;
+    padding:11px 26px;
+    overflow:hidden;
+    z-index:1;
+}
+.buttonContainer a:hover{
+    transition-property:color;
+    transition-delay:0.1s;
+    transition-duration:0.5s;
+    color:var(--PRIMARY-COLOR);
+}
+.buttonContainer a::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:0%;
+    height:100%;
+    background-color:transparent;
+    z-index:-1;
+}
+.buttonContainer a:hover::before{
+    transition-property:width,background-color;
+    transition-delay:0.1s,0.1s;
+    transition-duration:0.5s;
+    background-color: var(--BG-COLOR);
+    width:100%;
+}
+.buttonContainer a:last-child{
+    color:var(--PRIMARY-COLOR);
+    background-color:transparent;
+}
+.buttonContainer a:last-child:hover{
+    transition-property:color;
+    transition-delay:0.1s;
+    transition-duration:0.5s;
+    color:var(--BG-COLOR);
+}
+.buttonContainer a:last-child::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:transparent;
+    width:0%;
+    height:100%;
+    z-index:-1;
+}
+.buttonContainer a:last-child:hover::before{
+    transition-property:background-color,width;
+    transition-delay:0.1s,0.1s;
+    transition-duration:0.5s,0.5s;
+    background-color:var(--PRIMARY-COLOR);
+    width:100%;
+}
+.socials{
+    position:absolute;
+    bottom:40px;
+    display:flex;
+    justify-content:space-between;
+    width:10%;
+    padding:0 5px;
+}
+.socials::before{
+    content:'';
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:var(--BG-COLOR);
+    animation-name:type-right;
+    animation-delay:2.5s;
+    animation-duration:1s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+    z-index:4;
+}
+.socials a{
+    display:inline-flex;
+    position:relative;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+    color:var(--COLOR1);
+    border: 3px solid  var(--MAROON1);
+    border-radius:17px;
+    padding:7px;
+    overflow:hidden;
+    z-index:2;
+}
+.socials a:hover{
+    transition-property:color;
+    transition-delay:0.1s;
+    transition-duration:0.5s;
+    color:var(--BG-COLOR);
+}
+.socials a::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:0%;
+    height:100%;
+    z-index:-1;
+
+}
+.socials a:hover::before{
+    transition-property:background-color,width;
+    transition-delay:0.1s,0.1s;
+    transition-duration:0.5s,0.5s;
+    background-color: var(--MAROON1);
+    width:100%;
+}
+
+
+.imgFader{
+    position:absolute;
+    left:49%;
+    height:100%;
+    width:50%;
+    background-color:transparent;
+    transition:1s;
+}
+.imgFader:hover{
+    transition-property:background-color;
+    transition-delay:0.2s;
+    transition-duration:1.5s;
+    transition-timing-function:ease-out;
+    background-color:var(--BG-COLOR);
+    opacity:0.8;
+}
+.imgFader::before{
+    content:'';
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:var(--BG-COLOR);
+    animation-name:fade-in;
+    animation-delay:1s;
+    animation-duration:4.5s;
+    animation-timing-function:ease;
+    animation-fill-mode:forwards;
+    z-index:1;
+}
+
+
+@keyframes type-right{
+    100%{
+        width:0%;
+    }
+}
+
+@keyframes fade-in{
+    100%{
+        background-color:transparent;
+    }
+}
+
+/* old BGCOLOR- #081b29
